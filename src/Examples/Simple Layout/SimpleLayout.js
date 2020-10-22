@@ -2,9 +2,10 @@ import React from 'react'
 import '@carto/airship-style/dist/airship.css'
 import { defineCustomElements } from '@carto/airship-components/dist/loader'
 
-defineCustomElements(window);
+defineCustomElements(window)
 
 function SimpleLayout(){
+
     return(
         <body className="as-app-body as-app">
             <as-responsive-content>
