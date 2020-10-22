@@ -1,6 +1,15 @@
-import React from 'react'
+import React, {useRef} from 'react'
 
 function CustomTheme(){
+    const rangeSliderWidget = useRef()
+    const dropdown = useRef()
+    const widget0 = useRef()
+    const histogramWidget = useRef()
+    const categoryWidget = useRef()
+    const jsButtonModal = useRef()
+    const jsButtonModalClose = useRef()
+    const jsModal = useRef()
+
     const asInfowindow = {
         position: "absolute",
         top: "30px",
@@ -11,7 +20,6 @@ function CustomTheme(){
     }
 
     function feedRangeSlider () {
-        var rangeSliderWidget = document.querySelector('as-range-slider');
         rangeSliderWidget.minValue = 10;
         rangeSliderWidget.maxValue = 20;
         rangeSliderWidget.value = 12;
@@ -19,7 +27,6 @@ function CustomTheme(){
     }
   
     function feedDropdown () {
-    const dropdown = document.querySelector('as-dropdown');
     dropdown.options = [
         {
         text: 'All',
@@ -41,7 +48,6 @@ function CustomTheme(){
     }
 
     function feedHistogram () {
-    const widget0 = document.querySelector('as-stacked-bar-widget');
     widget0.data = [{
         category: 'Star Wars Ep. IV: A New Hope',
         values: {
@@ -76,8 +82,6 @@ function CustomTheme(){
         }
     }
 
-    var histogramWidget = document.querySelector('as-histogram-widget');
-
     histogramWidget.data = [{
         start: 0,
         end: 10,
@@ -107,7 +111,6 @@ function CustomTheme(){
     }
 
     function feedCategories () {
-    const categoryWidget = document.querySelector('as-category-widget');
     categoryWidget.showHeader = true;
     categoryWidget.showClearButton = true;
     categoryWidget.useTotalPercentage = false;
@@ -144,9 +147,6 @@ function CustomTheme(){
     }
 
     function setModal() {
-    const jsButtonModal = document.getElementById('js-button-modal');
-    const jsButtonModalClose = document.getElementById('js-button-modal-close');
-    const jsModal = document.getElementById('js-modal');
 
     jsButtonModal.addEventListener('click', function() {
         jsModal.classList.remove('as-modal--hidden');
@@ -442,17 +442,17 @@ function CustomTheme(){
                             </div>
                             <div className="as-p--12" role="tabpanel" data-title="Modal">
                                 <h2 className="as-title">Modal</h2>
-                                <button className="as-btn as-btn--primary as-m--4" id="js-button-modal">
+                                <button className="as-btn as-btn--primary as-m--4" ref={jsButtonModal}>
                                 Open modal
                                 </button>
                             </div>
                             <div className="as-p--12" role="tabpanel" data-title="Range slider">
                                 <h2 className="as-title">Range slider</h2>
-                                <as-range-slider></as-range-slider>
+                                <as-range-slider ref={rangeSliderWidget}></as-range-slider>
                             </div>
                             <div className="as-p--12" role="tabpanel" data-title="Dropdown">
                                 <h2 className="as-title">Dropdown</h2>
-                                <as-dropdown default-text="Dropdown" can-clear="true"></as-dropdown>
+                                <as-dropdown default-text="Dropdown" can-clear="true" ref={dropdown}></as-dropdown>
                                 <br />
                                 <h2 className="as-title">Menu dropdown</h2>
                                 <div style={{width: "240px"}} className="as-menu-dropdown">
@@ -530,24 +530,24 @@ function CustomTheme(){
 
                 <footer className="as-map-footer as-p--12">
                     <div className="as-box">
-                    <as-stacked-bar-widget id="widget-0" show-legend="true" heading="Star Wars Revenue" description="Description"></as-stacked-bar-widget>
+                    <as-stacked-bar-widget id="widget-0" show-legend="true" heading="Star Wars Revenue" description="Description" ref={widget0}></as-stacked-bar-widget>
                     </div>
                     <div className="as-box">
-                    <as-histogram-widget heading="Title" description="Description" show-header show-clear-button></as-histogram-widget>
+                    <as-histogram-widget heading="Title" description="Description" show-header show-clear-button ref={histogramWidget}></as-histogram-widget>
                     </div>
                 </footer>
                 </main>
 
                 <aside className="as-sidebar as-sidebar--right as-sidebar--l">
                 <div className="as-container">
-                    <as-category-widget className="as-p--16" heading="Business Volume" description="Description"></as-category-widget>
+                    <as-category-widget className="as-p--16" heading="Business Volume" description="Description" ref={categoryWidget}></as-category-widget>
                 </div>
                 </aside>
             </as-responsive-content>
 
-            <div id="js-modal" className="as-modal--hidden">
+            <div ref={jsModal} className="as-modal--hidden">
                 <div className="as-modal__content">
-                    <a style={{position: "absolute", right: "12px", top: "12px"}} id="js-button-modal-close" className="as-btn">Close</a>
+                    <a style={{position: "absolute", right: "12px", top: "12px"}} ref={jsButtonModalClose} className="as-btn">Close</a>
                     <h2 className="as-title">This is a modal</h2>
                     <p className="as-body">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam suscipit sequi provident maxime illum possimus debitis, at
