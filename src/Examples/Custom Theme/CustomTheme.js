@@ -1,4 +1,9 @@
 import React, {useRef, useEffect} from 'react'
+import '@carto/airship-style/dist/airship.css';
+import '@carto/airship-icons';
+import { defineCustomElements } from '@carto/airship-components/dist/loader';
+
+defineCustomElements(window);
 
 function CustomTheme(){
     const rangeSliderWidget = useRef()
@@ -168,8 +173,8 @@ function CustomTheme(){
         <div>
             <as-toolbar>
                 <div className="as-toolbar__item">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSI3NjIgLTU4IDMyIDMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc2Mi4wMDAwMDAsIC01OC4wMDAwMDApIj4KICAgIDxjaXJjbGUgY2xhc3M9IkhhbG8iIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMiIgY3g9IjE2IiBjeT0iMTYiIHI9IjE2Ij48L2NpcmNsZT4KICAgIDxjaXJjbGUgY2xhc3M9InBvaW50IiBmaWxsPSIjRkZGRkZGIiBjeD0iMTYiIGN5PSIxNiIgcj0iNS41Ij48L2NpcmNsZT4KICA8L2c+Cjwvc3ZnPgo="
-                    alt="Logo" />
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSI3NjIgLTU4IDMyIDMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc2Mi4wMDAwMDAsIC01OC4wMDAwMDApIj4KICAgIDxjaXJjbGUgY2xhc3M9IkhhbG8iIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMiIgY3g9IjE2IiBjeT0iMTYiIHI9IjE2Ij48L2NpcmNsZT4KICAgIDxjaXJjbGUgY2xhc3M9InBvaW50IiBmaWxsPSIjRkZGRkZGIiBjeD0iMTYiIGN5PSIxNiIgcj0iNS41Ij48L2NpcmNsZT4KICA8L2c+Cjwvc3ZnPgo="
+                        alt="Logo" />
                 </div>
                 <p className="as-toolbar__item">Paragraph</p>
                 <a href="./default.html" className="as-toolbar__item">Default Theme</a>
@@ -498,44 +503,44 @@ function CustomTheme(){
                 </aside>
 
                 <main className="as-main">
-                <div style={asMapArea}>
-                    <div id="map"></div>
-                    <div className="as-map-panels">
-                    <div className="as-panel as-panel--top as-panel--right">
-                        <div className="as-panel__element">
-                        <div className="as-box">
-                            <p className="as-body">This is a panel example</p>
+                    <div style={asMapArea}>
+                        <div id="map"></div>
+                        <div className="as-map-panels">
+                        <div className="as-panel as-panel--top as-panel--right">
+                            <div className="as-panel__element">
+                            <div className="as-box">
+                                <p className="as-body">This is a panel example</p>
+                            </div>
+                            </div>
                         </div>
                         </div>
+                        <as-infowindow src="http://on-desktop.com/wps/Animals___Cats_Black_Cat_Panther_043844_.jpg" style={asInfowindow}>
+                        <h2 className="as-title">Cat</h2>
+                        <p>
+                            <span className="as-badge">mammal</span>
+                            <span className="as-badge as-bg--badge-pink">carnivorous</span>
+                        </p>
+                        <p className="as-body">
+                            The domestic cat is a small, typically furry, carnivorous mammal. They are often called house cats when
+                            kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
+                        </p>
+                        </as-infowindow>
                     </div>
-                    </div>
-                    <as-infowindow src="http://on-desktop.com/wps/Animals___Cats_Black_Cat_Panther_043844_.jpg" style={asInfowindow}>
-                    <h2 className="as-title">Cat</h2>
-                    <p>
-                        <span className="as-badge">mammal</span>
-                        <span className="as-badge as-bg--badge-pink">carnivorous</span>
-                    </p>
-                    <p className="as-body">
-                        The domestic cat is a small, typically furry, carnivorous mammal. They are often called house cats when
-                        kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
-                    </p>
-                    </as-infowindow>
-                </div>
 
-                <footer className="as-map-footer as-p--12">
-                    <div className="as-box">
-                    <as-stacked-bar-widget id="widget-0" show-legend="true" heading="Star Wars Revenue" description="Description" ref={widget0}></as-stacked-bar-widget>
-                    </div>
-                    <div className="as-box">
-                    <as-histogram-widget heading="Title" description="Description" show-header show-clear-button ref={histogramWidget}></as-histogram-widget>
-                    </div>
-                </footer>
+                    <footer className="as-map-footer as-p--12">
+                        <div className="as-box">
+                        <as-stacked-bar-widget id="widget-0" show-legend="true" heading="Star Wars Revenue" description="Description" ref={widget0}></as-stacked-bar-widget>
+                        </div>
+                        <div className="as-box">
+                        <as-histogram-widget heading="Title" description="Description" show-header show-clear-button ref={histogramWidget}></as-histogram-widget>
+                        </div>
+                    </footer>
                 </main>
 
                 <aside className="as-sidebar as-sidebar--right as-sidebar--l">
-                <div className="as-container">
-                    <as-category-widget className="as-p--16" heading="Business Volume" description="Description" ref={categoryWidget}></as-category-widget>
-                </div>
+                    <div className="as-container">
+                        <as-category-widget className="as-p--16" heading="Business Volume" description="Description" ref={categoryWidget}></as-category-widget>
+                    </div>
                 </aside>
             </as-responsive-content>
 
