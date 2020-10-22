@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 
 function CustomTheme(){
     const rangeSliderWidget = useRef()
@@ -9,6 +9,7 @@ function CustomTheme(){
     const jsButtonModal = useRef()
     const jsButtonModalClose = useRef()
     const jsModal = useRef()
+    const responsiveContent = useRef()
 
     const asInfowindow = {
         position: "absolute",
@@ -20,155 +21,148 @@ function CustomTheme(){
     }
 
     function feedRangeSlider () {
-        rangeSliderWidget.minValue = 10;
-        rangeSliderWidget.maxValue = 20;
-        rangeSliderWidget.value = 12;
-        rangeSliderWidget.step = 2;
+        rangeSliderWidget.current.minValue = 10;
+        rangeSliderWidget.current.maxValue = 20;
+        rangeSliderWidget.current.value = 12;
+        rangeSliderWidget.current.step = 2;
     }
   
     function feedDropdown () {
-    dropdown.options = [
-        {
-        text: 'All',
-        value: 'all'
-        },
-        {
-        text: 'Open',
-        value: 'open'
-        },
-        {
-        text: 'Unfulfilled',
-        value: 'unfulfilled'
-        },
-        {
-        text: 'Unpaid',
-        value: 'unpaid'
-        }
-    ];
+        dropdown.current.options = [
+            {
+            text: 'All',
+            value: 'all'
+            },
+            {
+            text: 'Open',
+            value: 'open'
+            },
+            {
+            text: 'Unfulfilled',
+            value: 'unfulfilled'
+            },
+            {
+            text: 'Unpaid',
+            value: 'unpaid'
+            }
+        ];
     }
 
     function feedHistogram () {
-    widget0.data = [{
-        category: 'Star Wars Ep. IV: A New Hope',
-        values: {
-            dvd: 27229125,
-            blue: 3555058,
-        }
-        },
-        {
-        category: 'Star Wars Ep. V: The Empire Strikes Back',
-        values: {
-            dvd: 24928640,
-            blue: 2738207,
-        },
-        },
-        {
-        category: 'Star Wars Ep. VI: Return of the Jedi',
-        values: {
-            dvd: 23786454,
-            blue: 1908593,
-        }
-        }
-    ];
+        widget0.current.data = [{
+            category: 'Star Wars Ep. IV: A New Hope',
+            values: {
+                dvd: 27229125,
+                blue: 3555058,
+            }
+            },
+            {
+            category: 'Star Wars Ep. V: The Empire Strikes Back',
+            values: {
+                dvd: 24928640,
+                blue: 2738207,
+            },
+            },
+            {
+            category: 'Star Wars Ep. VI: Return of the Jedi',
+            values: {
+                dvd: 23786454,
+                blue: 1908593,
+            }
+            }
+        ];
 
-    widget0.metadata = {
-        dvd: {
-        label: 'Domestic DVD Sales',
-        color: '#17b0ff'
-        },
-        blue: {
-        label: 'Domestic Blu-ray Sales',
-        color: '#17ff66'
+        widget0.current.metadata = {
+            dvd: {
+            label: 'Domestic DVD Sales',
+            color: '#17b0ff'
+            },
+            blue: {
+            label: 'Domestic Blu-ray Sales',
+            color: '#17ff66'
+            }
         }
-    }
 
-    histogramWidget.data = [{
-        start: 0,
-        end: 10,
-        value: 5
-        },
-        {
-        start: 10,
-        end: 20,
-        value: 10
-        },
-        {
-        start: 20,
-        end: 30,
-        value: 15
-        },
-        {
-        start: 30,
-        end: 40,
-        value: 20
-        },
-        {
-        start: 40,
-        end: 50,
-        value: 30
-        },
-    ];
+        histogramWidget.current.data = [{
+            start: 0,
+            end: 10,
+            value: 5
+            },
+            {
+            start: 10,
+            end: 20,
+            value: 10
+            },
+            {
+            start: 20,
+            end: 30,
+            value: 15
+            },
+            {
+            start: 30,
+            end: 40,
+            value: 20
+            },
+            {
+            start: 40,
+            end: 50,
+            value: 30
+            },
+        ];
     }
 
     function feedCategories () {
-    categoryWidget.showHeader = true;
-    categoryWidget.showClearButton = true;
-    categoryWidget.useTotalPercentage = false;
-    categoryWidget.visibleCategories = Infinity;
-    categoryWidget.categories = [{
-        name: 'Bars & Restaurants',
-        value: 1000
-        },
-        {
-        name: 'Fashion',
-        value: 900
-        },
-        {
-        name: 'Grocery',
-        value: 800
-        },
-        {
-        name: 'Health',
-        value: 400
-        },
-        {
-        name: 'Shopping mall',
-        value: 250
-        },
-        {
-        name: 'Transportation',
-        value: 1000
-        },
-        {
-        name: 'Leisure',
-        value: 760
-        }
-    ];
+        categoryWidget.current.showHeader = true;
+        categoryWidget.current.showClearButton = true;
+        categoryWidget.current.useTotalPercentage = false;
+        categoryWidget.current.visibleCategories = Infinity;
+        categoryWidget.current.categories = [{
+            name: 'Bars & Restaurants',
+            value: 1000
+            },
+            {
+            name: 'Fashion',
+            value: 900
+            },
+            {
+            name: 'Grocery',
+            value: 800
+            },
+            {
+            name: 'Health',
+            value: 400
+            },
+            {
+            name: 'Shopping mall',
+            value: 250
+            },
+            {
+            name: 'Transportation',
+            value: 1000
+            },
+            {
+            name: 'Leisure',
+            value: 760
+            }
+        ];
     }
 
-    function setModal() {
-
-    jsButtonModal.addEventListener('click', function() {
-        jsModal.classList.remove('as-modal--hidden');
-        jsModal.classList.add('as-modal');
-    });
-
-    jsButtonModalClose.addEventListener('click', function() {
-        jsModal.classList.remove('as-modal');
-        jsModal.classList.add('as-modal--hidden');
-    });
+    function jsButtonModalOnClick(){
+        jsModal.current.classList.remove('as-modal--hidden');
+        jsModal.current.classList.add('as-modal');
     }
 
-    function onLoad () {
-    feedRangeSlider();
-    feedDropdown();
-    feedHistogram();
-    feedCategories();
-    setModal();
-    };
+    function jsButtonModalCloseOnclick(){
+        jsModal.current.classList.remove('as-modal');
+        jsModal.current.classList.add('as-modal--hidden');
+    }
 
-    const responsiveContent = document.querySelector('as-responsive-content');
-    responsiveContent.addEventListener('ready', onLoad);
+    useEffect(() => {
+        feedRangeSlider();
+        feedDropdown();
+        feedHistogram();
+        feedCategories();
+      }, [])
 
     return(
         <div>
@@ -184,7 +178,7 @@ function CustomTheme(){
                 <i className="as-toolbar__item as-icon as-icon-points"></i>
             </as-toolbar>
 
-            <as-responsive-content>
+            <as-responsive-content ref={responsiveContent}>
                 <aside className="as-sidebar as-sidebar--left as-sidebar--left--l">
                     <div className="as-container">
                         <as-tabs>
@@ -396,7 +390,7 @@ function CustomTheme(){
                                 </section>
                             </div>
                             <div className="as-p--12" role="tabpanel" data-title="Table">
-                                <as-responsive-content>
+                                <as-responsive-content ref={responsiveContent}>
                                 <table className="as-table as-table--stripped">
                                     <thead>
                                     <tr>
@@ -442,7 +436,7 @@ function CustomTheme(){
                             </div>
                             <div className="as-p--12" role="tabpanel" data-title="Modal">
                                 <h2 className="as-title">Modal</h2>
-                                <button className="as-btn as-btn--primary as-m--4" ref={jsButtonModal}>
+                                <button className="as-btn as-btn--primary as-m--4" ref={jsButtonModal} onClick={jsButtonModalOnClick}>
                                 Open modal
                                 </button>
                             </div>
@@ -547,7 +541,7 @@ function CustomTheme(){
 
             <div ref={jsModal} className="as-modal--hidden">
                 <div className="as-modal__content">
-                    <a style={{position: "absolute", right: "12px", top: "12px"}} ref={jsButtonModalClose} className="as-btn">Close</a>
+                    <a style={{position: "absolute", right: "12px", top: "12px"}} ref={jsButtonModalClose} className="as-btn" onClick={jsButtonModalCloseOnclick}>Close</a>
                     <h2 className="as-title">This is a modal</h2>
                     <p className="as-body">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam suscipit sequi provident maxime illum possimus debitis, at
