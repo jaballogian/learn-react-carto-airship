@@ -6,9 +6,7 @@ import AppClass from './AppClass'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  // <AppClass />
-  <App/>
-  ,
+  <App/>,
   document.getElementById('root')
 );
 
