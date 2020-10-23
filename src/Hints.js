@@ -16,6 +16,8 @@
 // react-leaflet
 // react-scripts
 
+// . Erase React Strict Mode in the index.js file
+
 // a. If want to use mapbox map, add this line of code in the index.html file in the public folder
 // <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -50,7 +52,11 @@
 // . Read for all error props messages in the console and fix them (ie. change "for" props to "htmlFor", change "tabindex" to "tabIndex")
 
 // . CSS section
-// . Copy CSS codes from Carto/Airship documentation (inside style tags)
-// . Create constant variable for each styling element and change to JCS convention (from "property-name: value;" to "propertyName: "value"")
+// . Copy CSS codes from Carto/Airship documentation (inside style tags) and paste them inside react functional component created
+// . Create constant variable for each styling element and change to CSS-in-JS convention (from "property-name: value;" to "propertyName: "value"")
 
 // . JavaScript section
+// . Copy JavaScript code from Carto/Airship documentation (inside script tags) and paste them inside react functional component created
+// . Replace document.querySelector() method using useRef() hooks from 'react' dependency
+// . Add .current to all useRef variables
+// . Use useEffect() hooks from 'react' dependency to load data for all components after rendering them
