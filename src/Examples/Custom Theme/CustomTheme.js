@@ -170,7 +170,7 @@ function CustomTheme(){
       }, [])
 
     return(
-        <div>
+        <body className="as-app-body as-app">
             <as-toolbar>
                 <div className="as-toolbar__item">
                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSI3NjIgLTU4IDMyIDMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc2Mi4wMDAwMDAsIC01OC4wMDAwMDApIj4KICAgIDxjaXJjbGUgY2xhc3M9IkhhbG8iIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMiIgY3g9IjE2IiBjeT0iMTYiIHI9IjE2Ij48L2NpcmNsZT4KICAgIDxjaXJjbGUgY2xhc3M9InBvaW50IiBmaWxsPSIjRkZGRkZGIiBjeD0iMTYiIGN5PSIxNiIgcj0iNS41Ij48L2NpcmNsZT4KICA8L2c+Cjwvc3ZnPgo="
@@ -255,22 +255,22 @@ function CustomTheme(){
                                 <ul className="as-list--simple">
                                     <li className="as-radio">
                                     <input className="as-radio__input" type="radio" name="contact" id="first" value="first" checked />
-                                    <label className="as-caption" for="first">First</label>
+                                    <label className="as-caption" htmlFor="first">First</label>
                                     </li>
 
                                     <li className="as-radio">
                                     <input className="as-radio__input" type="radio" name="contact" id="second" value="second" />
-                                    <label className="as-caption" for="second">Second</label>
+                                    <label className="as-caption" htmlFor="second">Second</label>
                                     </li>
 
                                     <li className="as-radio">
-                                    <input className="as-radio__input" type="radio" name="contact" id="third" value="third" disabled />
-                                    <label className="as-caption" for="third">Third</label>
+                                    <input className="as-radio__input" type="radio" name="contact" id="third" value="third" disabled/>
+                                    <label className="as-caption" htmlFor="third">Third</label>
                                     </li>
 
                                     <li className="as-radio">
-                                    <input className="as-radio__input" type="radio" name="contact2" id="fourth" value="fourth" checked disabled />
-                                    <label className="as-caption" for="fourth">Fourth</label>
+                                    <input className="as-radio__input" type="radio" name="contact2" id="fourth" value="fourth" checked disabled/>
+                                    <label className="as-caption" htmlFor="fourth">Fourth</label>
                                     </li>
                                 </ul>
                                 </section>
@@ -282,7 +282,7 @@ function CustomTheme(){
                                             <polyline className="as-checkbox-check" points="1.65093994 3.80255127 4.48919678 6.97192383 10.3794556 0.717346191"></polyline>
                                         </svg>
                                         </span>
-                                        <label className="as-caption" for="checkbox-0"> Checkbox</label>
+                                        <label className="as-caption" htmlFor="checkbox-0"> Checkbox</label>
                                     </div>
                                     <div className="as-checkbox">
                                         <input className="as-checkbox-input as-checkbox-input--error" type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3"/>
@@ -291,7 +291,7 @@ function CustomTheme(){
                                             <polyline className="as-checkbox-check" points="1.65093994 3.80255127 4.48919678 6.97192383 10.3794556 0.717346191"></polyline>
                                         </svg>
                                         </span>
-                                        <label className="as-caption" for="checkbox3"> Checkbox Error</label>
+                                        <label className="as-caption" htmlFor="checkbox3"> Checkbox Error</label>
                                     </div>
                                     <div className="as-checkbox">
                                         <input disabled className="as-checkbox-input" type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2"/>
@@ -300,7 +300,7 @@ function CustomTheme(){
                                             <polyline className="as-checkbox-check" points="1.65093994 3.80255127 4.48919678 6.97192383 10.3794556 0.717346191"></polyline>
                                         </svg>
                                         </span>
-                                        <label className="as-caption" for="checkbox2"> Checkbox Disabled</label>
+                                        <label className="as-caption" htmlFor="checkbox2"> Checkbox Disabled</label>
                                     </div>
                                     <div className="as-checkbox">
                                         <input disabled checked className="as-checkbox-input" type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2"/>
@@ -309,7 +309,7 @@ function CustomTheme(){
                                             <polyline className="as-checkbox-check" points="1.65093994 3.80255127 4.48919678 6.97192383 10.3794556 0.717346191"></polyline>
                                         </svg>
                                         </span>
-                                        <label className="as-caption" for="checkbox2"> Checkbox Disabled</label>
+                                        <label className="as-caption" htmlFor="checkbox2"> Checkbox Disabled</label>
                                     </div>
                                     <div className="as-checkbox">
                                         <input disabled className="as-checkbox-input as-checkbox-input--error" type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3"/>
@@ -318,7 +318,7 @@ function CustomTheme(){
                                             <polyline className="as-checkbox-check" points="1.65093994 3.80255127 4.48919678 6.97192383 10.3794556 0.717346191"></polyline>
                                         </svg>
                                         </span>
-                                        <label className="as-caption" for="checkbox3"> Checkbox Error Disabled</label>
+                                        <label className="as-caption" htmlFor="checkbox3"> Checkbox Error Disabled</label>
                                     </div>
                                     <div className="as-checkbox">
                                         <input disabled checked className="as-checkbox-input as-checkbox-input--error" type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3"/>
@@ -327,7 +327,7 @@ function CustomTheme(){
                                             <polyline className="as-checkbox-check" points="1.65093994 3.80255127 4.48919678 6.97192383 10.3794556 0.717346191"></polyline>
                                             </svg>
                                         </span>
-                                        <label className="as-caption" for="checkbox3"> Checkbox Error Disabled Checked</label>
+                                        <label className="as-caption" htmlFor="checkbox3"> Checkbox Error Disabled Checked</label>
                                     </div>
 
                                 </section>
@@ -359,15 +359,15 @@ function CustomTheme(){
                                     </p>
                                     <p>
                                         <span className="as-caption">Default</span>
-                                        <input className="as-input" type="text" readonly/>
+                                        <input className="as-input" type="text" readOnly/>
                                     </p>
                                     <p>
                                         <span className="as-caption">With placeholder</span>
-                                        <input className="as-input" type="text" placeholder="Hello there" readonly/>
+                                        <input className="as-input" type="text" placeholder="Hello there" readOnly/>
                                     </p>
                                     <p>
                                         <span className="as-caption">With value</span>
-                                        <input className="as-input" type="text" value="Hello there" readonly/>
+                                        <input className="as-input" type="text" value="Hello there" readOnly/>
                                     </p>
                                     <p>
                                         <span className="as-caption">Default</span>
@@ -456,7 +456,7 @@ function CustomTheme(){
                                 <h2 className="as-title">Menu dropdown</h2>
                                 <div style={{width: "240px"}} className="as-menu-dropdown">
                                 <button aria-haspopup="listbox" className="as-menu-dropdown--input"> I'm a dropdown </button>
-                                <ul tabindex="-1" className="as-menu-dropdown--options">
+                                <ul tabIndex="-1" className="as-menu-dropdown--options">
                                     <li>
                                     <button>All</button>
                                     </li>
@@ -515,15 +515,15 @@ function CustomTheme(){
                         </div>
                         </div>
                         <as-infowindow src="http://on-desktop.com/wps/Animals___Cats_Black_Cat_Panther_043844_.jpg" style={asInfowindow}>
-                        <h2 className="as-title">Cat</h2>
-                        <p>
-                            <span className="as-badge">mammal</span>
-                            <span className="as-badge as-bg--badge-pink">carnivorous</span>
-                        </p>
-                        <p className="as-body">
-                            The domestic cat is a small, typically furry, carnivorous mammal. They are often called house cats when
-                            kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
-                        </p>
+                            <h2 className="as-title">Cat</h2>
+                            <p>
+                                <span className="as-badge">mammal</span>
+                                <span className="as-badge as-bg--badge-pink">carnivorous</span>
+                            </p>
+                            <p className="as-body">
+                                The domestic cat is a small, typically furry, carnivorous mammal. They are often called house cats when
+                                kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
+                            </p>
                         </as-infowindow>
                     </div>
 
@@ -560,7 +560,7 @@ function CustomTheme(){
                     </p>
                 </div>
             </div>
-        </div>
+        </body>
     )
 }
 
